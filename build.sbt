@@ -4,7 +4,7 @@ val scalaVersion_2_12 = "2.12.8"
 val flywayVersion = "5.2.4"
 val flywayPlayVersion = "5.3.2"
 
-val scalatest = "org.scalatest" %% "scalatest" % "3.0.7" % "test"
+val scalatest = "org.scalatest" %% "scalatest" % "3.0.8" % "test"
 
 lazy val commonSettings = Seq(
   organization := "org.flywaydb",
@@ -56,12 +56,12 @@ lazy val playapp = project.in(file("playapp"))
     version := playAppVersion,
     libraryDependencies ++= Seq(
       guice,
-      "com.h2database" % "h2" % "[1.4,)",
+      "com.h2database" % "h2" % "1.4.199",
       "postgresql" % "postgresql" % "9.1-901.jdbc4",
       "com.typesafe.play" %% "play-test" % play.core.PlayVersion.current % "test"
         excludeAll ExclusionRule(organization = "org.specs2"),
-      "org.scalikejdbc" %% "scalikejdbc" % "3.2.1" % "test",
-      "org.scalikejdbc" %% "scalikejdbc-config" % "3.2.1" % "test",
+      "org.scalikejdbc" %% "scalikejdbc" % "3.2.4" % "test",
+      "org.scalikejdbc" %% "scalikejdbc-config" % "3.2.4" % "test",
       scalatest
     )
   )
